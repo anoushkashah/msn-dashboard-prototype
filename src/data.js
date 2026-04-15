@@ -99,10 +99,49 @@ export const statsData = {
 };
 
 export const mapMarkers = [
-  { lat: 51.5, lng: -0.12, label: "London", stories: 14 },
-  { lat: 40.71, lng: -74.0, label: "New York", stories: 22 },
-  { lat: 35.68, lng: 139.69, label: "Tokyo", stories: 9 },
-  { lat: -23.55, lng: -46.63, label: "São Paulo", stories: 6 },
-  { lat: 28.61, lng: 77.2, label: "New Delhi", stories: 11 },
-  { lat: 1.35, lng: 103.82, label: "Singapore", stories: 7 },
+  {
+    lat: 51.5, lng: -0.12, label: "London", stories: 3,
+    articles: [
+      { title: "UK PM Starmer rules out emergency economic measures", publisher: "BBC News", url: "https://www.bbc.com/news/uk-politics" },
+      { title: "Bank of England holds interest rates steady", publisher: "The Guardian", url: "https://www.theguardian.com/business/bank-of-england" },
+      { title: "London rents hit all-time high amid housing crisis", publisher: "Financial Times", url: "https://www.ft.com/uk-economy" },
+    ]
+  },
+  {
+    lat: 40.71, lng: -74.0, label: "New York", stories: 3,
+    articles: [
+      { title: "DOJ moves to dismiss Jan. 6 convictions against Proud Boys", publisher: "CBS News", url: "https://www.cbsnews.com/news/doj-moves-dismiss-jan-6-convictions-proud-boys-oath-keepers-seditious-conspiracy/" },
+      { title: "Wall Street rallies as inflation data comes in cooler than expected", publisher: "Reuters", url: "https://www.reuters.com/markets" },
+      { title: "NYC congestion pricing sees first full month of results", publisher: "NPR", url: "https://www.npr.org/sections/national/" },
+    ]
+  },
+  {
+    lat: 35.68, lng: 139.69, label: "Tokyo", stories: 2,
+    articles: [
+      { title: "Japan's economy contracts for second quarter amid export slump", publisher: "Reuters", url: "https://www.reuters.com/world/asia-pacific" },
+      { title: "Tokyo Olympics legacy sites face uncertain future", publisher: "AP News", url: "https://apnews.com/hub/japan" },
+    ]
+  },
+  {
+    lat: -23.55, lng: -46.63, label: "São Paulo", stories: 2,
+    articles: [
+      { title: "Brazil's Supreme Court clashes with Congress over new legislation", publisher: "Al Jazeera", url: "https://www.aljazeera.com/news/americas" },
+      { title: "Amazon deforestation rates drop for second consecutive year", publisher: "BBC News", url: "https://www.bbc.com/news/world-latin-america" },
+    ]
+  },
+  {
+    lat: 28.61, lng: 77.2, label: "New Delhi", stories: 3,
+    articles: [
+      { title: "India and Pakistan tensions rise following border skirmish", publisher: "Al Jazeera", url: "https://www.aljazeera.com/news/asia" },
+      { title: "India's GDP growth forecast revised upward by IMF", publisher: "Reuters", url: "https://www.reuters.com/world/india" },
+      { title: "New Delhi air quality reaches hazardous levels this week", publisher: "NPR", url: "https://www.npr.org/sections/goatsandsoda" },
+    ]
+  },
+  {
+    lat: 1.35, lng: 103.82, label: "Singapore", stories: 2,
+    articles: [
+      { title: "Singapore becomes Asia's top financial hub overtaking Hong Kong", publisher: "Financial Times", url: "https://www.ft.com/singapore" },
+      { title: "Southeast Asia trade deal gains momentum at regional summit", publisher: "Reuters", url: "https://www.reuters.com/world/asia-pacific" },
+    ]
+  },
 ];

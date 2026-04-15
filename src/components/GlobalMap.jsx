@@ -15,7 +15,7 @@ export default function GlobalMap() {
           zoom={1.5}
           style={{ height: "100%", width: "100%", borderRadius: 10 }}
           scrollWheelZoom={false}
-          zoomControl={false}
+          zoomControl={true}
           attributionControl={false}
         >
           <TileLayer
@@ -26,11 +26,11 @@ export default function GlobalMap() {
             <CircleMarker
               key={i}
               center={[m.lat, m.lng]}
-              radius={m.stories / 3 + 5}
+              radius={m.articles.length * 4 + 5}
               pathOptions={{ color: "#0067b8", fillColor: "#0067b8", fillOpacity: 0.6, weight: 1.5 }}
             >
               <Tooltip direction="top" offset={[0, -6]} opacity={0.95}>
-                <strong>{m.label}</strong><br />{m.stories} stories
+                <strong>{m.label}</strong><br />{m.articles.length} articles
               </Tooltip>
             </CircleMarker>
           ))}
