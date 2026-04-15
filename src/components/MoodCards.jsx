@@ -41,8 +41,8 @@ export default function MoodCards() {
   return (
     <div style={s.col}>
       {[
-        { key: "cheerMeUp", label: "Cheer me Up", sub: "happy news · Based on likes" },
-        { key: "feelingLucky", label: "Feeling Lucky", sub: "surprise me! · Based on likes" },
+        { key: "cheerMeUp", label: "Cheer Me Up", sub: "Happy News · Based on likes" },
+        { key: "feelingLucky", label: "I'm Feeling Lucky", sub: "Surprise Me! · Based on likes" },
       ].map(({ key, label, sub }) => (
         <div
           key={key}
