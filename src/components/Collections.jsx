@@ -31,17 +31,24 @@ export default function Collections() {
           {collections.map(c => (
             <div key={c.id}>
               <div style={s.collItem} onClick={() => setExpanded(expanded === c.id ? null : c.id)}>
-                <div style={{ ...s.collIcon, background: c.color }}>{c.icon}</div>
+                <div style={{ ...s.collIcon, background: c.color }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: c.color === "#e8f0fe" ? "#0067b8" : c.color === "#eaf7ef" ? "#1a7a3c" : c.color === "#fdf0e8" ? "#e07b39" : "#c0392b" }}>
+                    {c.name.slice(0, 2).toUpperCase()}
+                  </span>
+                </div>
                 <div style={{ flex: 1 }}>
                   <div style={s.collName}>{c.name}</div>
-                  <div style={s.collCount}>{c.count} articles</div>
+                  <div style={s.collCount}>{c.count} articles saved</div>
                 </div>
                 <ChevronRight size={13} color="#ccc" style={{ transform: expanded === c.id ? "rotate(90deg)" : "none", transition: "transform .15s" }} />
               </div>
               {expanded === c.id && (
                 <div style={s.collArticles}>
                   {c.articles.map((a, i) => (
-                    <div key={i} style={s.collArticle}>· {a}</div>
+                    <div key={i} style={s.collArticle}>
+                      <div style={s.collDot} />
+                      {a}
+                    </div>
                   ))}
                 </div>
               )}
@@ -82,13 +89,7 @@ export default function Collections() {
             {weeklyData.map((d, i) => (
               <div key={i} style={s.barCol}>
                 <div style={s.barWrap}>
-                  <div
-                    style={{
-                      ...s.bar,
-                      height: `${(d.read / maxRead) * 100}%`,
-                    }}
-                    title={`${d.read} articles`}
-                  />
+                  <div style={{ ...s.bar, height: `${(d.read / maxRead) * 100}%` }} title={`${d.read} articles`} />
                 </div>
                 <div style={s.barVal}>{d.read}</div>
                 <div style={s.barWeek}>{d.week}</div>
@@ -108,11 +109,12 @@ const s = {
   activeTab: { background: "#1a1a1a", color: "#fff", border: "1px solid #1a1a1a" },
   collList: { display: "flex", flexDirection: "column", gap: 2 },
   collItem: { display: "flex", alignItems: "center", gap: 9, padding: "7px 0", cursor: "pointer", borderBottom: "1px solid #f2ede8" },
-  collIcon: { width: 28, height: 28, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, flexShrink: 0 },
+  collIcon: { width: 32, height: 32, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 },
   collName: { fontSize: 12.5, fontWeight: 500, color: "#1a1a1a" },
   collCount: { fontSize: 10.5, color: "#aaa" },
-  collArticles: { paddingLeft: 37, paddingBottom: 6 },
-  collArticle: { fontSize: 11.5, color: "#666", padding: "2px 0", lineHeight: 1.5 },
+  collArticles: { paddingLeft: 41, paddingBottom: 6 },
+  collArticle: { fontSize: 11.5, color: "#666", padding: "4px 0", lineHeight: 1.5, display: "flex", alignItems: "flex-start", gap: 6 },
+  collDot: { width: 4, height: 4, borderRadius: "50%", background: "#d0cbc4", flexShrink: 0, marginTop: 6 },
   stats: { display: "flex", flexDirection: "column", gap: 10 },
   delta: { fontSize: 12, color: "#27a157", fontWeight: 500 },
   statsGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 },
