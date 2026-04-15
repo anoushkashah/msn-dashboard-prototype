@@ -102,46 +102,46 @@ export const mapMarkers = [
   {
     lat: 51.5, lng: -0.12, label: "London", stories: 3,
     articles: [
-      { title: "UK PM Starmer rules out emergency economic measures", publisher: "BBC News", url: "https://www.bbc.com/news/uk-politics" },
-      { title: "Bank of England holds interest rates steady", publisher: "The Guardian", url: "https://www.theguardian.com/business/bank-of-england" },
-      { title: "London rents hit all-time high amid housing crisis", publisher: "Financial Times", url: "https://www.ft.com/uk-economy" },
+      { title: "London Underground to face four days of disruption due to RMT strike action", publisher: "Time Out London", url: "https://www.timeout.com/london/news/london-tube-and-train-strikes-spring-2026-full-list-of-dates-and-lines-impacted-how-to-travel-everything-you-need-to-know-march-april-may-031026" },
+      { title: "Lady Mayor of the City of London warns against protectionism at diplomat gathering", publisher: "City of London", url: "https://news.cityoflondon.gov.uk/" },
+      { title: "UK house prices fall in London and South East as mortgage approvals drop 4% year-on-year", publisher: "House of Commons Library", url: "https://commonslibrary.parliament.uk/research-briefings/sn02820/"},
     ]
   },
   {
     lat: 40.71, lng: -74.0, label: "New York", stories: 3,
     articles: [
-      { title: "DOJ moves to dismiss Jan. 6 convictions against Proud Boys", publisher: "CBS News", url: "https://www.cbsnews.com/news/doj-moves-dismiss-jan-6-convictions-proud-boys-oath-keepers-seditious-conspiracy/" },
-      { title: "Wall Street rallies as inflation data comes in cooler than expected", publisher: "Reuters", url: "https://www.reuters.com/markets" },
-      { title: "NYC congestion pricing sees first full month of results", publisher: "NPR", url: "https://www.npr.org/sections/national/" },
+      { title: "NYPD says subway is safe despite weekend violence as overall crime drops 1.5%", publisher: "Spectrum News NY1", url: "https://ny1.com/nyc/all-boroughs/morning-briefing/2026/04/15/morning-briefing--april-15--2026" },
+      { title: "Northeast Supply Enhancement natural gas pipeline breaks ground in Brooklyn", publisher: "Spectrum News NY1", url: "https://ny1.com/nyc/all-boroughs/morning-briefing/2026/04/15/morning-briefing--april-15--2026" },
+      { title: "Mayor Mamdani announces La Marqueta as first site for city's public grocery stores", publisher: "NYC.gov", url: "https://www.nyc.gov/main" },
     ]
   },
   {
     lat: 35.68, lng: 139.69, label: "Tokyo", stories: 2,
     articles: [
-      { title: "Japan's economy contracts for second quarter amid export slump", publisher: "Reuters", url: "https://www.reuters.com/world/asia-pacific" },
-      { title: "Tokyo Olympics legacy sites face uncertain future", publisher: "AP News", url: "https://apnews.com/hub/japan" },
+      { title: "Tokyo-based Dirbato acquires Singapore's Icon Consulting Group in international expansion", publisher: "Staffing Industry", url: "https://www.staffingindustry.com/news/global-daily-news/japans-dirbato-acquires-singapore-based-icon-consulting-group" },
+      { title: "Flight disruptions across Asia: Tokyo among hardest hit hubs with 182 delays", publisher: "Travel and Tour World", url: "https://www.travelandtourworld.com/news/article/flights-cancelled-in-asia-as-thailand-japan-singapore-uae-india-and-indonesia-cancel-67-and-delay-1470-flights-disrupting-emirates-jal-ana-thai-airways-air-india-and-others-in-dubai-tokyo-bangkok-delh/" },
     ]
   },
   {
-    lat: -23.55, lng: -46.63, label: "São Paulo", stories: 2,
+    lat: -23.55, lng: -46.63, label: "São Paulo", stories: 3,
     articles: [
-      { title: "Brazil's Supreme Court clashes with Congress over new legislation", publisher: "Al Jazeera", url: "https://www.aljazeera.com/news/americas" },
-      { title: "Amazon deforestation rates drop for second consecutive year", publisher: "BBC News", url: "https://www.bbc.com/news/world-latin-america" },
+      { title: "Ibovespa hits record 197,324 as dollar falls to R$5.01 — strongest real in two years", publisher: "The Rio Times", url: "https://www.riotimesonline.com/" },
+      { title: "Brazil inflation forecast rises to 4.71%, above target ceiling for first time this cycle", publisher: "The Rio Times", url: "https://www.riotimesonline.com/" },
+      { title: "São Paulo prepares to host WTM Latin America 2026 with global tourism industry focus", publisher: "Travel and Tour World", url: "https://www.travelandtourworld.com/news/article/brazil-travel-outlook-as-sao-paulo-prepares-to-host-wtm-latin-america-2026-with-global-industry-focus/" },
     ]
   },
   {
-    lat: 28.61, lng: 77.2, label: "New Delhi", stories: 3,
+    lat: 28.61, lng: 77.2, label: "New Delhi", stories: 2,
     articles: [
-      { title: "India and Pakistan tensions rise following border skirmish", publisher: "Al Jazeera", url: "https://www.aljazeera.com/news/asia" },
-      { title: "India's GDP growth forecast revised upward by IMF", publisher: "Reuters", url: "https://www.reuters.com/world/india" },
-      { title: "New Delhi air quality reaches hazardous levels this week", publisher: "NPR", url: "https://www.npr.org/sections/goatsandsoda" },
+      { title: "Delhi and Tokyo align on West Asia de-escalation and maritime security strategy", publisher: "Indian Defence News", url: "https://www.indiandefensenews.in/2026/04/new-strategic-synergy-delhi-and-tokyo.html" },
+      { title: "Delhi airport among hardest hit as 176 flight delays reported across Indian hubs", publisher: "Travel and Tour World", url: "https://www.travelandtourworld.com/news/article/flights-cancelled-in-asia-as-thailand-japan-singapore-uae-india-and-indonesia-cancel-67-and-delay-1470-flights-disrupting-emirates-jal-ana-thai-airways-air-india-and-others-in-dubai-tokyo-bangkok-delh/" },
     ]
   },
   {
     lat: 1.35, lng: 103.82, label: "Singapore", stories: 2,
     articles: [
-      { title: "Singapore becomes Asia's top financial hub overtaking Hong Kong", publisher: "Financial Times", url: "https://www.ft.com/singapore" },
-      { title: "Southeast Asia trade deal gains momentum at regional summit", publisher: "Reuters", url: "https://www.reuters.com/world/asia-pacific" },
+      { title: "Singapore Airlines suspends Dubai and Gulf routes as Middle East ceasefire holds", publisher: "Wego Travel Blog", url: "https://blog.wego.com/singapore-airlines-flight-status-2026/" },
+      { title: "Commander of Royal Brunei Navy makes introductory visit to Singapore Ministry of Defence", publisher: "MINDEF Singapore", url: "https://www.mindef.gov.sg/news-and-events/latest-releases/15apr26-nr/" },
     ]
   },
 ];
