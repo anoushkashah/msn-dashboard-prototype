@@ -30,8 +30,6 @@ export default function SourceBias() {
             stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round"
           />
           <circle cx="80" cy="82" r="4" fill="#1a1a1a" />
-          <text x="14" y="82" fontSize="9" fill="#0067b8" fontWeight="600">Left</text>
-          <text x="120" y="82" fontSize="9" fill="#c0392b" fontWeight="600">Right</text>
         </svg>
       </div>
 
