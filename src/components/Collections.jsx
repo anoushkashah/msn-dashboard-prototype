@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { collections } from "../data";
-import { BookOpen, Share2, FolderOpen, ChevronRight } from "lucide-react";
+import { BookOpen, Share2, FolderOpen } from "lucide-react";
 
 const weeklyData = [
   { week: "Mar 24", read: 18 },
@@ -14,7 +14,6 @@ const allTopics = ["All", ...new Set(collections.map(c => c.topic))];
 
 export default function Collections() {
   const [tab, setTab] = useState("collections");
-  const [expanded, setExpanded] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filtered = activeFilter === "All"
@@ -33,7 +32,7 @@ export default function Collections() {
       </div>
 
       {tab === "collections" && (
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
           <div style={s.filters}>
             {allTopics.map(t => (
               <button
@@ -47,27 +46,16 @@ export default function Collections() {
           </div>
           <div style={s.collList}>
             {filtered.map(c => (
-              <div key={c.id}>
-                <div style={s.collItem} onClick={() => setExpanded(expanded === c.id ? null : c.id)}>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={s.collName}>{c.name}</div>
-                    <div style={s.collCount}>{c.count} articles</div>
-                  </div>
-                  <ChevronRight size={13} color="#ccc" style={{ transform: expanded === c.id ? "rotate(90deg)" : "none", transition: "transform .15s", flexShrink: 0 }} />
+              <div key={c.id} style={s.collItem}>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={s.collName}>{c.name}</div>
+                  <div style={s.collCount}>{c.count} articles</div>
                 </div>
-                {expanded === c.id && (
-                  <div style={s.collArticles}>
-                    {c.articles.map((a, i) => (
-                      <div key={i} style={s.collArticle}>
-                        <div style={s.collDot} />
-                        <span>{a}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                <div style={s.collDate}>{c.date}</div>
               </div>
             ))}
           </div>
+          <div style={s.moreBtn}>+ 5 more collections</div>
         </div>
       )}
 
@@ -122,13 +110,12 @@ const s = {
   filters: { display: "flex", gap: 5, flexWrap: "wrap", marginBottom: 8 },
   filterBtn: { background: "#f3f0eb", border: "1px solid #e0dbd3", borderRadius: 20, padding: "3px 9px", fontSize: 11, color: "#666", cursor: "pointer", fontFamily: "inherit" },
   filterActive: { background: "#1a1a1a", color: "#fff", border: "1px solid #1a1a1a" },
-  collList: { display: "flex", flexDirection: "column" },
-  collItem: { display: "flex", alignItems: "center", gap: 8, padding: "7px 0", cursor: "pointer", borderBottom: "1px solid #f2ede8" },
+  collList: { display: "flex", flexDirection: "column", flex: 1 },
+  collItem: { display: "flex", alignItems: "center", gap: 8, padding: "7px 0", borderBottom: "1px solid #f2ede8", cursor: "pointer" },
   collName: { fontSize: 12, fontWeight: 500, color: "#1a1a1a", marginBottom: 2 },
   collCount: { fontSize: 10.5, color: "#aaa" },
-  collArticles: { paddingLeft: 8, paddingBottom: 6, paddingTop: 2 },
-  collArticle: { fontSize: 11, color: "#666", padding: "3px 0", lineHeight: 1.5, display: "flex", alignItems: "flex-start", gap: 6 },
-  collDot: { width: 4, height: 4, borderRadius: "50%", background: "#d0cbc4", flexShrink: 0, marginTop: 6 },
+  collDate: { fontSize: 10.5, color: "#bbb", flexShrink: 0, marginLeft: 8 },
+  moreBtn: { fontSize: 11.5, color: "#0067b8", textAlign: "center", padding: "10px 0 2px", cursor: "pointer", borderTop: "1px solid #f2ede8", marginTop: 4 },
   stats: { display: "flex", flexDirection: "column", gap: 10 },
   delta: { fontSize: 12, color: "#27a157", fontWeight: 500 },
   statsGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 },

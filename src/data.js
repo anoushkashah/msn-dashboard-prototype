@@ -51,14 +51,12 @@ export const headlines = [
 ];
 
 export const collections = [
-  { id: 1, name: "Fed Rate Decisions", topic: "Finance", topicColor: "#e07b39", topicBg: "#fdf0e8", count: 8, color: "#fdf0e8", articles: ["Fed holds rates steady as inflation cools to 2.4%", "Fed signals two rate cuts possible in second half of 2026", "Wall Street rallies as inflation data comes in cooler than expected"] },
-  { id: 2, name: "Markets This Week", topic: "Finance", topicColor: "#e07b39", topicBg: "#fdf0e8", count: 14, color: "#fdf0e8", articles: ["S&P 500 closes at all-time high amid cooling inflation", "Bitcoin surges past $80k as institutional demand grows", "Dollar weakens against yen amid trade uncertainty"] },
-  { id: 3, name: "AI & Big Tech", topic: "Technology", topicColor: "#0067b8", topicBg: "#e8f0fe", count: 11, color: "#e8f0fe", articles: ["OpenAI launches GPT-5 with real-time reasoning", "Apple Vision Pro 2 leaked specs revealed", "EU AI Act enforcement begins — what it means for startups"] },
-  { id: 4, name: "Gadgets & Releases", topic: "Technology", topicColor: "#0067b8", topicBg: "#e8f0fe", count: 6, color: "#e8f0fe", articles: ["Best budget laptops of 2026", "Samsung Galaxy S26 review", "New iPad Pro teardown reveals upgraded chip"] },
-  { id: 5, name: "Climate Policy", topic: "Science", topicColor: "#1a7a3c", topicBg: "#eaf7ef", count: 9, color: "#eaf7ef", articles: ["EU revises carbon targets ahead of 2030 deadline", "Solar energy surpasses coal globally", "Arctic sea ice hits record low for third year"] },
-  { id: 6, name: "Health & Medicine", topic: "Science", topicColor: "#1a7a3c", topicBg: "#eaf7ef", count: 7, color: "#eaf7ef", articles: ["New drug trial shows 35% reduction in Alzheimer's decline", "Drug overdose deaths plummet in the US", "Ozempic linked to reduced cancer risk in new study"] },
-  { id: 7, name: "US Politics", topic: "Politics", topicColor: "#c0392b", topicBg: "#fdeeed", count: 15, color: "#fdeeed", articles: ["DOJ drops Jan. 6 charges against Proud Boys", "Senate fails to pass Homeland Security funding bill", "Mayor Mamdani announces public grocery store sites in NYC"] },
-  { id: 8, name: "Saved for Later", topic: "Politics", topicColor: "#c0392b", topicBg: "#fdeeed", count: 4, color: "#fdeeed", articles: ["Vance travels to Hungary ahead of Orbán election", "Trump renews threat to attack Iran infrastructure", "US lifts sanctions on acting Venezuelan President"] },
+  { id: 1, name: "US Politics", topic: "Politics", count: 15, date: "Apr 14, 2026" },
+  { id: 2, name: "AI & Big Tech", topic: "Technology", count: 11, date: "Apr 12, 2026" },
+  { id: 3, name: "Markets This Week", topic: "Finance", count: 14, date: "Apr 10, 2026" },
+  { id: 4, name: "Climate Policy", topic: "Science", count: 9, date: "Apr 7, 2026" },
+  { id: 5, name: "Fed Rate Decisions", topic: "Finance", count: 8, date: "Apr 3, 2026" },
+  { id: 6, name: "Health & Medicine", topic: "Science", count: 7, date: "Mar 31, 2026" },
 ];
 
 export const biasData = {
