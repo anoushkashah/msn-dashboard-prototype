@@ -51,46 +51,14 @@ export const headlines = [
 ];
 
 export const collections = [
-  {
-    id: 1,
-    name: "Tech & AI Breakthroughs",
-    topic: "Technology",
-    topicColor: "#0067b8",
-    topicBg: "#e8f0fe",
-    count: 12,
-    color: "#e8f0fe",
-    articles: ["OpenAI launches GPT-5 with real-time reasoning capabilities", "Apple Vision Pro 2 leaked specs reveal spatial computing upgrade", "EU AI Act enforcement begins — what it means for startups"],
-  },
-  {
-    id: 2,
-    name: "Climate & Environment",
-    topic: "Science",
-    topicColor: "#1a7a3c",
-    topicBg: "#eaf7ef",
-    count: 8,
-    color: "#eaf7ef",
-    articles: ["Arctic sea ice hits record low for third consecutive year", "EU revises carbon emission targets ahead of 2030 deadline", "Solar energy surpasses coal in global electricity generation"],
-  },
-  {
-    id: 3,
-    name: "Markets & Economy",
-    topic: "Finance",
-    topicColor: "#e07b39",
-    topicBg: "#fdf0e8",
-    count: 21,
-    color: "#fdf0e8",
-    articles: ["S&P 500 closes at all-time high amid cooling inflation data", "Bitcoin surges past $80k as institutional demand grows", "Fed signals two rate cuts possible in second half of 2026"],
-  },
-  {
-    id: 4,
-    name: "Saved for Later",
-    topic: "Politics",
-    topicColor: "#c0392b",
-    topicBg: "#fdeeed",
-    count: 5,
-    color: "#fdeeed",
-    articles: ["DOJ drops Jan. 6 charges against Proud Boys leaders", "Vance travels to Hungary ahead of Orbán election", "Senate fails to pass Homeland Security funding bill"],
-  },
+  { id: 1, name: "Fed Rate Decisions", topic: "Finance", topicColor: "#e07b39", topicBg: "#fdf0e8", count: 8, color: "#fdf0e8", articles: ["Fed holds rates steady as inflation cools to 2.4%", "Fed signals two rate cuts possible in second half of 2026", "Wall Street rallies as inflation data comes in cooler than expected"] },
+  { id: 2, name: "Markets This Week", topic: "Finance", topicColor: "#e07b39", topicBg: "#fdf0e8", count: 14, color: "#fdf0e8", articles: ["S&P 500 closes at all-time high amid cooling inflation", "Bitcoin surges past $80k as institutional demand grows", "Dollar weakens against yen amid trade uncertainty"] },
+  { id: 3, name: "AI & Big Tech", topic: "Technology", topicColor: "#0067b8", topicBg: "#e8f0fe", count: 11, color: "#e8f0fe", articles: ["OpenAI launches GPT-5 with real-time reasoning", "Apple Vision Pro 2 leaked specs revealed", "EU AI Act enforcement begins — what it means for startups"] },
+  { id: 4, name: "Gadgets & Releases", topic: "Technology", topicColor: "#0067b8", topicBg: "#e8f0fe", count: 6, color: "#e8f0fe", articles: ["Best budget laptops of 2026", "Samsung Galaxy S26 review", "New iPad Pro teardown reveals upgraded chip"] },
+  { id: 5, name: "Climate Policy", topic: "Science", topicColor: "#1a7a3c", topicBg: "#eaf7ef", count: 9, color: "#eaf7ef", articles: ["EU revises carbon targets ahead of 2030 deadline", "Solar energy surpasses coal globally", "Arctic sea ice hits record low for third year"] },
+  { id: 6, name: "Health & Medicine", topic: "Science", topicColor: "#1a7a3c", topicBg: "#eaf7ef", count: 7, color: "#eaf7ef", articles: ["New drug trial shows 35% reduction in Alzheimer's decline", "Drug overdose deaths plummet in the US", "Ozempic linked to reduced cancer risk in new study"] },
+  { id: 7, name: "US Politics", topic: "Politics", topicColor: "#c0392b", topicBg: "#fdeeed", count: 15, color: "#fdeeed", articles: ["DOJ drops Jan. 6 charges against Proud Boys", "Senate fails to pass Homeland Security funding bill", "Mayor Mamdani announces public grocery store sites in NYC"] },
+  { id: 8, name: "Saved for Later", topic: "Politics", topicColor: "#c0392b", topicBg: "#fdeeed", count: 4, color: "#fdeeed", articles: ["Vance travels to Hungary ahead of Orbán election", "Trump renews threat to attack Iran infrastructure", "US lifts sanctions on acting Venezuelan President"] },
 ];
 
 export const biasData = {
