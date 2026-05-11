@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MapContainer, TileLayer, CircleMarker, Tooltip } from "react-leaflet";
 import { mapMarkers } from "../data";
-import { X } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 
 function getPublisherStyle(publisher) {
@@ -19,7 +19,7 @@ function getPublisherStyle(publisher) {
     "Wego Travel Blog":    { background: "#00b4d8", color: "#fff", fontFamily: "Arial, sans-serif" },
     "MINDEF Singapore":    { background: "#cc0000", color: "#fff", fontFamily: "Arial, sans-serif" },
   };
-  return styles[publisher] || { background: "#eee", color: "#333", fontFamily: "Arial, sans-serif" };
+  return styles[publisher] || { background: "#333", color: "#fff", fontFamily: "Arial, sans-serif" };
 }
 
 export default function GlobalMap() {
@@ -40,19 +40,27 @@ export default function GlobalMap() {
           zoomControl={true}
           attributionControl={false}
         >
-          <TileLayer url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png" />
+          <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png" />
           {mapMarkers.map((m, i) => (
-            <CircleMarker
-              key={i}
-              center={[m.lat, m.lng]}
-              radius={m.articles.length * 4 + 5}
-              pathOptions={{ color: "#0067b8", fillColor: "#0067b8", fillOpacity: 0.6, weight: 1.5 }}
-              eventHandlers={{ click: () => setSelected(m) }}
-            >
-              <Tooltip direction="top" offset={[0, -6]} opacity={0.95}>
-                <strong>{m.label}</strong> · {m.articles.length} articles
-              </Tooltip>
-            </CircleMarker>
+            <>
+              <CircleMarker
+                key={`outer-${i}`}
+                center={[m.lat, m.lng]}
+                radius={m.articles.length * 4 + 12}
+                pathOptions={{ color: "#58a6ff", fillColor: "#58a6ff", fillOpacity: 0.08, weight: 0.5 }}
+              />
+              <CircleMarker
+                key={`inner-${i}`}
+                center={[m.lat, m.lng]}
+                radius={m.articles.length * 4 + 5}
+                pathOptions={{ color: "#58a6ff", fillColor: "#58a6ff", fillOpacity: 0.5, weight: 1.5 }}
+                eventHandlers={{ click: () => setSelected(m) }}
+              >
+                <Tooltip direction="top" offset={[0, -6]} opacity={0.95}>
+                  <strong>{m.label}</strong> · {m.articles.length} articles
+                </Tooltip>
+              </CircleMarker>
+            </>
           ))}
         </MapContainer>
       </div>
@@ -74,6 +82,7 @@ export default function GlobalMap() {
                   <span style={{ ...s.publisherBadge, ...getPublisherStyle(a.publisher) }}>
                     {a.publisher}
                   </span>
+                  <ExternalLink size={10} color="#0067b8" />
                 </div>
               </a>
             ))}
@@ -98,6 +107,6 @@ const s = {
   articleList: { display: "flex", flexDirection: "column" },
   articleItem: { display: "flex", flexDirection: "column", gap: 5, padding: "9px 12px", borderBottom: "1px solid #f2ede8", textDecoration: "none", cursor: "pointer", background: "#fff" },
   articleTitle: { fontSize: 12, color: "#333", lineHeight: 1.4 },
-  articleBottom: { display: "flex", alignItems: "center" },
+  articleBottom: { display: "flex", alignItems: "center", justifyContent: "space-between" },
   publisherBadge: { fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 3, letterSpacing: "0.02em" },
 };
