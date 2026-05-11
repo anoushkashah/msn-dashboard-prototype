@@ -20,14 +20,6 @@ function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-const ARTICLES = {
-  cheerMeUp: {
-    image: "https://images.unsplash.com/photo-1590698933947-a202b069a861?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  feelingLucky: {
-    image: "https://plus.unsplash.com/premium_photo-1664392434825-eb95db0931d4?q=80&w=1650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-};
 
 export default function MoodCards() {
   const [hovered, setHovered] = useState(null);
@@ -41,9 +33,9 @@ export default function MoodCards() {
   return (
     <div style={s.col}>
       {[
-        { key: "cheerMeUp", label: "Cheer Me Up", sub: "Happy News · Based on likes" },
-        { key: "feelingLucky", label: "I'm Feeling Lucky", sub: "Surprise Me! · Based on likes" },
-      ].map(({ key, label, sub }) => (
+        { key: "cheerMeUp", label: "Cheer Me Up" },
+        { key: "feelingLucky", label: "I'm Feeling Lucky" },
+      ].map(({ key, label }) => (
         <div
           key={key}
           style={{ ...s.card, background: hovered === key ? "#f5f2ee" : "#fff" }}
@@ -51,17 +43,7 @@ export default function MoodCards() {
           onMouseEnter={() => setHovered(key)}
           onMouseLeave={() => setHovered(null)}
         >
-          <div style={s.row}>
-            <div style={s.text}>
-              <div style={s.label}>{label}</div>
-              <div style={s.sub}>{sub}</div>
-            </div>
-            <img
-              src={ARTICLES[key].image}
-              alt={label}
-              style={s.photo}
-            />
-          </div>
+          <div style={s.label}>{label}</div>
         </div>
       ))}
     </div>
@@ -78,15 +60,5 @@ const s = {
     flex: 1,
     transition: "background 0.15s",
   },
-  row: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 },
-  text: { display: "flex", flexDirection: "column", flex: 1 },
-  label: { fontSize: 12, fontWeight: 500, color: "#1a1a1a" },
-  sub: { fontSize: 10, color: "#bbb", marginBottom: 4 },
-  photo: {
-    width: 48,
-    height: 48,
-    borderRadius: 8,
-    objectFit: "cover",
-    flexShrink: 0,
-  },
+  label: { fontSize: 16, fontWeight: 600, color: "#1a1a1a", textAlign: "center", padding: "6px 0" },
 };
