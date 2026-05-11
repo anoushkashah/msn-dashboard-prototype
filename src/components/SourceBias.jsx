@@ -49,6 +49,9 @@ export default function SourceBias() {
           </div>
         ))}
       </div>
+      <div style={s.link}>
+        View a breakdown of your sources <span style={s.arrow}>→</span>
+      </div>
     </div>
   );
 }
@@ -66,4 +69,6 @@ const s = {
   rowBar: { flex: 1, height: 4, background: "#f0ece7", borderRadius: 2, overflow: "hidden" },
   rowFill: { height: "100%", borderRadius: 2 },
   rowVal: { fontSize: 12, color: "#888", width: 28, textAlign: "right" },
+  link: { marginTop: 10, fontSize: 12, color: "#555", cursor: "pointer" },
+  arrow: { fontSize: 13 },
 };
