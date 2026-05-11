@@ -19,7 +19,7 @@ export default function SourceBias() {
           <defs>
             <linearGradient id="biasGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#1550a8" />
-              <stop offset="50%" stopColor="#6528a0" />
+              <stop offset="50%" stopColor="#888888" />
               <stop offset="100%" stopColor="#9e2218" />
             </linearGradient>
             <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
@@ -42,7 +42,7 @@ export default function SourceBias() {
       <div style={s.rows}>
         {[
           { label: "Left", value: biasData.left.sources, color: "#1550a8" },
-          { label: "Center", value: biasData.center.sources, color: "#6528a0" },
+          { label: "Center", value: biasData.center.sources, color: "#888888" },
           { label: "Right", value: biasData.right.sources, color: "#9e2218" },
         ].map(r => (
           <div key={r.label} style={s.row}>

@@ -69,6 +69,6 @@ const s = {
     transition: "background 0.15s",
     flex: 1,
   },
-  label: { fontSize: 14.5, fontWeight: 700, color: "#1a1a1a" },
-  desc: { fontSize: 12, color: "#888", marginTop: 3 },
+  label: { fontSize: 14, fontWeight: 600, color: "#1a1a1a" },
+  desc: { fontSize: 11.5, color: "#aaa", marginTop: 2 },
 };

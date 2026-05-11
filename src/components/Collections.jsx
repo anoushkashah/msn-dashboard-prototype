@@ -46,22 +46,22 @@ export default function Collections() {
           <div style={s.delta}>+23% from last week</div>
           <div style={s.statsGrid}>
             <div style={s.statBox}>
-              <div style={{ ...s.statIcon, background: "#e8f0fe" }}><BookOpen size={13} color="#0067b8" /></div>
+              <div style={{ ...s.statIcon, background: "#e8e3dc" }}><BookOpen size={13} color="#1a1a1a" /></div>
               <div style={s.statLabel}>Read this week</div>
               <div style={s.statVal}>25</div>
             </div>
             <div style={s.statBox}>
-              <div style={{ ...s.statIcon, background: "#fdf0e8" }}><Share2 size={13} color="#e07b39" /></div>
+              <div style={{ ...s.statIcon, background: "#e8e3dc" }}><Share2 size={13} color="#1a1a1a" /></div>
               <div style={s.statLabel}>Shared this week</div>
               <div style={s.statVal}>6</div>
             </div>
             <div style={s.statBox}>
-              <div style={{ ...s.statIcon, background: "#e8f0fe" }}><BookOpen size={13} color="#0067b8" /></div>
+              <div style={{ ...s.statIcon, background: "#e8e3dc" }}><BookOpen size={13} color="#1a1a1a" /></div>
               <div style={s.statLabel}>Read total</div>
               <div style={s.statVal}>236</div>
             </div>
             <div style={s.statBox}>
-              <div style={{ ...s.statIcon, background: "#fdf0e8" }}><Share2 size={13} color="#e07b39" /></div>
+              <div style={{ ...s.statIcon, background: "#e8e3dc" }}><Share2 size={13} color="#1a1a1a" /></div>
               <div style={s.statLabel}>Shared total</div>
               <div style={s.statVal}>40</div>
             </div>

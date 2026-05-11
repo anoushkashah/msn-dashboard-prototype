@@ -24,5 +24,5 @@ const s = {
   sub:    { fontSize: 14, color: "#aaa", marginBottom: 6, textDecoration: "none" },
   name:   { fontSize: 33, fontWeight: 700, color: "#1a1a1a", letterSpacing: "-1px", lineHeight: 1.1, textDecoration: "none" },
   body:   { fontSize: 13, color: "#888", lineHeight: 1.5, textDecoration: "none" },
-  link:   { fontSize: 13, color: "#0067b8", marginTop: 5, textDecoration: "none" },
+  link:   { fontSize: 13, color: "#8b1a1a", marginTop: 5, textDecoration: "none" },
 };
