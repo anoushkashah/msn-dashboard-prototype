@@ -16,10 +16,14 @@ const LUCKY_ARTICLES = [
   { url: "https://www.npr.org/2025/05/19/nx-s1-5395983/baby-monkey-kidnappings-capuchin-howler-culture" },
 ];
 
+const IMAGES = {
+  cheerMeUp: "https://images.unsplash.com/photo-1590698933947-a202b069a861?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  feelingLucky: "https://plus.unsplash.com/premium_photo-1664392434825-eb95db0931d4?q=80&w=1650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+};
+
 function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
-
 
 export default function MoodCards() {
   const [hovered, setHovered] = useState(null);
@@ -43,8 +47,13 @@ export default function MoodCards() {
           onMouseEnter={() => setHovered(key)}
           onMouseLeave={() => setHovered(null)}
         >
-          <div style={s.label}>{label}</div>
-          <div style={s.desc}>{desc}</div>
+          <div style={s.row}>
+            <div>
+              <div style={s.label}>{label}</div>
+              <div style={s.desc}>{desc}</div>
+            </div>
+            <img src={IMAGES[key]} alt={label} style={s.photo} />
+          </div>
         </div>
       ))}
     </div>
@@ -61,6 +70,8 @@ const s = {
     flex: 1,
     transition: "background 0.15s",
   },
+  row: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 },
   label: { fontSize: 14.5, fontWeight: 700, color: "#1a1a1a" },
   desc: { fontSize: 12, color: "#888", marginTop: 2 },
+  photo: { width: 48, height: 48, borderRadius: 8, objectFit: "cover", flexShrink: 0 },
 };

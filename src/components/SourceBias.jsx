@@ -2,6 +2,10 @@ import { biasData } from "../data";
 
 export default function SourceBias() {
   const total = biasData.left.sources + biasData.center.sources + biasData.right.sources;
+  const leftFrac = biasData.left.sources / total;
+  const dotAngle = Math.PI - leftFrac * Math.PI;
+  const dotX = 80 + 64 * Math.cos(dotAngle);
+  const dotY = 82 - 64 * Math.sin(dotAngle);
 
   return (
     <div style={s.card}>
@@ -10,7 +14,6 @@ export default function SourceBias() {
         <div style={s.subtitle}>Political leaning of your sources</div>
       </div>
 
-      {/* Arc — left is blue, right is red */}
       <div style={s.gaugeWrap}>
         <svg width="160" height="90" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -19,25 +22,28 @@ export default function SourceBias() {
               <stop offset="50%" stopColor="#6528a0" />
               <stop offset="100%" stopColor="#9e2218" />
             </linearGradient>
+            <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
           </defs>
           <path d="M16 82 A64 64 0 0 1 144 82" fill="none" stroke="#eee" strokeWidth="10" strokeLinecap="round" />
           <path d="M16 82 A64 64 0 0 1 144 82" fill="none" stroke="url(#biasGrad)" strokeWidth="10" strokeLinecap="round" />
-          {/* needle */}
-          <line
-            x1="80" y1="82"
-            x2={80 + 46 * Math.cos(Math.PI - (biasData.left.sources / total) * Math.PI)}
-            y2={82 - 46 * Math.sin((biasData.left.sources / total) * Math.PI)}
-            stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round"
-          />
-          <circle cx="80" cy="82" r="4" fill="#1a1a1a" />
+          {/* glowing dot on arc */}
+          <circle cx={dotX} cy={dotY} r="7" fill="white" opacity="0.5" filter="url(#glow)" />
+          <circle cx={dotX} cy={dotY} r="5" fill="white" filter="url(#glow)" />
+          <circle cx={dotX} cy={dotY} r="3" fill="white" />
         </svg>
       </div>
 
       <div style={s.rows}>
         {[
-          { label: "Left", value: biasData.left.sources, color: "#1550a8", bg: "#e8f0fe" },
-          { label: "Center", value: biasData.center.sources, color: "#6528a0", bg: "#f5effe" },
-          { label: "Right", value: biasData.right.sources, color: "#9e2218", bg: "#fdeeed" },
+          { label: "Left", value: biasData.left.sources, color: "#1550a8" },
+          { label: "Center", value: biasData.center.sources, color: "#6528a0" },
+          { label: "Right", value: biasData.right.sources, color: "#9e2218" },
         ].map(r => (
           <div key={r.label} style={s.row}>
             <div style={{ ...s.rowDot, background: r.color }} />
@@ -49,6 +55,7 @@ export default function SourceBias() {
           </div>
         ))}
       </div>
+
       <div style={s.link}>
         View a breakdown of your sources <span style={s.arrow}>→</span>
       </div>
@@ -57,18 +64,18 @@ export default function SourceBias() {
 }
 
 const s = {
-  card: { background: "#fff", border: "1px solid #e8e4de", borderRadius: 14, padding: "13px 15px", flex: 1 },
+  card: { background: "#fff", border: "1px solid #e8e4de", borderRadius: 14, padding: "13px 15px", flex: 1, display: "flex", flexDirection: "column" },
   header: { marginBottom: 8 },
   title: { fontSize: 14, fontWeight: 600, color: "#1a1a1a" },
   subtitle: { fontSize: 11.5, color: "#aaa", marginTop: 2 },
   gaugeWrap: { display: "flex", justifyContent: "center", margin: "4px 0 8px" },
-  rows: { display: "flex", flexDirection: "column", gap: 6 },
+  rows: { display: "flex", flexDirection: "column", gap: 10 },
   row: { display: "flex", alignItems: "center", gap: 7 },
   rowDot: { width: 8, height: 8, borderRadius: "50%", flexShrink: 0 },
   rowLabel: { fontSize: 12, color: "#555", width: 36 },
   rowBar: { flex: 1, height: 4, background: "#f0ece7", borderRadius: 2, overflow: "hidden" },
   rowFill: { height: "100%", borderRadius: 2 },
   rowVal: { fontSize: 12, color: "#888", width: 28, textAlign: "right" },
-  link: { marginTop: 10, fontSize: 12, color: "#555", cursor: "pointer" },
+  link: { marginTop: "auto", paddingTop: 12, fontSize: 12, color: "#555", cursor: "pointer" },
   arrow: { fontSize: 13 },
 };
