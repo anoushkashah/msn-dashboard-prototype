@@ -117,7 +117,7 @@ const s = {
   collDate: { fontSize: 10.5, color: "#bbb", flexShrink: 0, marginLeft: 8 },
   moreBtn: { fontSize: 11.5, color: "#0067b8", textAlign: "center", padding: "10px 0 2px", cursor: "pointer", borderTop: "1px solid #f2ede8", marginTop: 4 },
   stats: { display: "flex", flexDirection: "column", gap: 10 },
-  delta: { fontSize: 12, color: "#27a157", fontWeight: 500 },
+  delta: { fontSize: 12, color: "#1a7a40", fontWeight: 500 },
   statsGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 },
   statBox: { background: "#f8f5f1", borderRadius: 10, padding: "9px 11px", display: "flex", flexDirection: "column", gap: 4 },
   statIcon: { width: 24, height: 24, borderRadius: 6, display: "flex", alignItems: "center", justifyContent: "center" },
@@ -127,7 +127,7 @@ const s = {
   chart: { display: "flex", gap: 8, alignItems: "flex-end", height: 90 },
   barCol: { flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 3, height: "100%" },
   barWrap: { flex: 1, width: "100%", display: "flex", alignItems: "flex-end" },
-  bar: { width: "100%", background: "#0067b8", borderRadius: "4px 4px 0 0", transition: "height .3s ease", minHeight: 4 },
+  bar: { width: "100%", background: "#0a4a8a", borderRadius: "4px 4px 0 0", transition: "height .3s ease", minHeight: 4 },
   barVal: { fontSize: 10, color: "#555", fontWeight: 500 },
   barWeek: { fontSize: 9, color: "#bbb", textAlign: "center" },
 };

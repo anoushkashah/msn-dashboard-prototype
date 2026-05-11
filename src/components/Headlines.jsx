@@ -1,3 +1,5 @@
+import PublisherBadge from "./PublisherBadge";
+
 const headlines = [
   {
     id: 1,
@@ -49,14 +51,7 @@ export default function Headlines() {
         <a key={h.id} href={h.url} target="_blank" rel="noreferrer" style={s.item}>
           <div style={s.text}>{h.text}</div>
           <div style={s.bottom}>
-            <span style={{
-              ...s.publisherBadge,
-              background: h.publisherBg,
-              color: h.publisherColor,
-              fontFamily: h.publisherFont,
-            }}>
-              {h.publisher}
-            </span>
+            <PublisherBadge publisher={h.publisher} />
             <span style={s.time}>{h.time}</span>
           </div>
         </a>
@@ -71,6 +66,5 @@ const s = {
   item: { display: "flex", flexDirection: "column", padding: "8px 0", borderBottom: "1px solid #f2ede8", textDecoration: "none", cursor: "pointer" },
   text: { fontSize: 12.5, color: "#333", lineHeight: 1.4, marginBottom: 5 },
   bottom: { display: "flex", alignItems: "center", gap: 8 },
-  publisherBadge: { fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 4, letterSpacing: "0.02em" },
   time: { fontSize: 10, color: "#bbb" },
 };

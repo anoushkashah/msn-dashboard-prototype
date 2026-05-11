@@ -1,4 +1,5 @@
 import { topTopics } from "../data";
+import PublisherBadge from "./PublisherBadge";
 
 export default function TopTopics() {
   return (
@@ -13,7 +14,7 @@ export default function TopTopics() {
             <a href={t.article.url} target="_blank" rel="noreferrer" style={s.articlePreview}>
               <img src={t.article.image} alt="" style={s.articleImg} />
               <div style={s.articleBody}>
-                <div style={s.articlePublisher}>{t.article.publisher}</div>
+                <PublisherBadge publisher={t.article.publisher} />
                 <div style={s.articleTitle}>{t.article.title}</div>
               </div>
             </a>
@@ -34,7 +35,6 @@ const s = {
   articlePreview: { display: "flex", gap: 9, background: "#f8f5f1", borderRadius: 10, padding: 9, textDecoration: "none", border: "1px solid #ede9e3" },
   articleImg: { width: 56, height: 56, borderRadius: 8, objectFit: "cover", flexShrink: 0 },
   articleBody: { flex: 1, minWidth: 0 },
-  articlePublisher: { fontSize: 10, color: "#0067b8", fontWeight: 500, marginBottom: 3 },
   articleTitle: { fontSize: 11.5, color: "#333", lineHeight: 1.4, marginBottom: 4 },
   articleLink: { fontSize: 10, color: "#0067b8", display: "flex", alignItems: "center", gap: 3 },
 };

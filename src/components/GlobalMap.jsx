@@ -3,26 +3,7 @@ import { MapContainer, TileLayer, CircleMarker, Tooltip } from "react-leaflet";
 import { mapMarkers } from "../data";
 import { X, ExternalLink } from "lucide-react";
 import "leaflet/dist/leaflet.css";
-
-const PUBLISHER_DOMAINS = {
-  "BBC News":                 "bbc.co.uk",
-  "Time Out London":          "timeout.com",
-  "City of London":           "cityoflondon.gov.uk",
-  "House of Commons Library": "parliament.uk",
-  "Spectrum News NY1":        "ny1.com",
-  "NYC.gov":                  "nyc.gov",
-  "Staffing Industry":        "staffingindustry.com",
-  "Travel and Tour World":    "travelandtourworld.com",
-  "The Rio Times":            "riotimesonline.com",
-  "Indian Defence News":      "indiandefencenews.in",
-  "Wego Travel Blog":         "wego.com",
-  "MINDEF Singapore":         "mindef.gov.sg",
-};
-
-function getFavicon(publisher) {
-  const domain = PUBLISHER_DOMAINS[publisher] || "";
-  return domain ? `https://www.google.com/s2/favicons?domain=${domain}&sz=16` : null;
-}
+import PublisherBadge from "./PublisherBadge";
 
 export default function GlobalMap() {
   const [selected, setSelected] = useState(null);
@@ -81,12 +62,7 @@ export default function GlobalMap() {
                   <a key={i} href={a.url} target="_blank" rel="noreferrer" style={s.articleItem}>
                     <div style={s.articleTitle}>{a.title}</div>
                     <div style={s.articleBottom}>
-                      <span style={s.publisherBadge}>
-                        {getFavicon(a.publisher) && (
-                          <img src={getFavicon(a.publisher)} alt="" style={s.favicon} />
-                        )}
-                        {a.publisher}
-                      </span>
+                      <PublisherBadge publisher={a.publisher} />
                       <ExternalLink size={10} color="#0067b8" />
                     </div>
                   </a>
@@ -104,7 +80,7 @@ const s = {
   card: { background: "#fff", border: "1px solid #e8e4de", borderRadius: 14, padding: "13px 15px", display: "flex", flexDirection: "column", flex: 1 },
   header: { display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 8 },
   title: { fontSize: 13, fontWeight: 600, color: "#1a1a1a" },
-  meta: { fontSize: 11, color: "#27a157" },
+  meta: { fontSize: 11, color: "#1a7a40" },
   mapWrap: { flex: 1, minHeight: 200, borderRadius: 10, overflow: "hidden", position: "relative" },
   backdrop: { position: "absolute", inset: 0, background: "rgba(0,0,0,0.35)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", borderRadius: 10 },
   lightbox: { background: "#fff", borderRadius: 12, border: "1px solid #e8e4de", overflow: "hidden", width: "80%", maxWidth: 340, maxHeight: "75%", display: "flex", flexDirection: "column", boxShadow: "0 8px 32px rgba(0,0,0,0.18)" },
@@ -116,6 +92,4 @@ const s = {
   articleItem: { display: "flex", flexDirection: "column", gap: 5, padding: "9px 12px", borderBottom: "1px solid #f2ede8", textDecoration: "none", cursor: "pointer", background: "#fff" },
   articleTitle: { fontSize: 12, color: "#333", lineHeight: 1.4 },
   articleBottom: { display: "flex", alignItems: "center", justifyContent: "space-between" },
-  publisherBadge: { display: "flex", alignItems: "center", gap: 4, fontSize: 10, fontWeight: 600, color: "#1a1a1a", background: "#f0ece7", padding: "2px 7px", borderRadius: 3 },
-  favicon: { width: 12, height: 12, objectFit: "contain", flexShrink: 0 },
 };
