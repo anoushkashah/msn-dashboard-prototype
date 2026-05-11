@@ -76,7 +76,7 @@ const s = {
     transition: "background 0.15s",
   },
   row: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 },
-  label: { fontSize: 12, fontWeight: 500, color: "#1a1a1a", flex: 1 },
+  label: { fontSize: 13.5, fontWeight: 700, color: "#1a1a1a", flex: 1 },
   photo: {
     width: 48,
     height: 48,

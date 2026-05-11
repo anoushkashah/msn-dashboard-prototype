@@ -62,6 +62,6 @@ const s = {
   content: { flex: 1, overflowY: "auto", padding: "14px 22px", display: "flex", flexDirection: "column", gap: 12, minHeight: 0 },
   midRow: { display: "grid", gridTemplateColumns: "minmax(0,1.5fr) minmax(0,1fr)", gap: 12 },
   bottomRow: { display: "grid", gridTemplateColumns: "minmax(0,1fr) minmax(0,1.1fr) minmax(0,1.6fr)", gap: 12, flex: 1, minHeight: 0 },
-  leftCol: { display: "flex", flexDirection: "column", gap: 10, flex: 1, justifyContent: "space-between" },
+  leftCol: { display: "flex", flexDirection: "column", gap: 10, flex: 1 },
   mapCol: { display: "flex", flexDirection: "column", minHeight: 0 },
 };

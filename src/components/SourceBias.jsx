@@ -15,9 +15,9 @@ export default function SourceBias() {
         <svg width="160" height="90" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="biasGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#1a62c4" />
-              <stop offset="50%" stopColor="#7a30b8" />
-              <stop offset="100%" stopColor="#b82820" />
+              <stop offset="0%" stopColor="#1550a8" />
+              <stop offset="50%" stopColor="#6528a0" />
+              <stop offset="100%" stopColor="#9e2218" />
             </linearGradient>
           </defs>
           <path d="M16 82 A64 64 0 0 1 144 82" fill="none" stroke="#eee" strokeWidth="10" strokeLinecap="round" />
@@ -35,9 +35,9 @@ export default function SourceBias() {
 
       <div style={s.rows}>
         {[
-          { label: "Left", value: biasData.left.sources, color: "#1a62c4", bg: "#e8f0fe" },
-          { label: "Center", value: biasData.center.sources, color: "#7a30b8", bg: "#f5effe" },
-          { label: "Right", value: biasData.right.sources, color: "#b82820", bg: "#fdeeed" },
+          { label: "Left", value: biasData.left.sources, color: "#1550a8", bg: "#e8f0fe" },
+          { label: "Center", value: biasData.center.sources, color: "#6528a0", bg: "#f5effe" },
+          { label: "Right", value: biasData.right.sources, color: "#9e2218", bg: "#fdeeed" },
         ].map(r => (
           <div key={r.label} style={s.row}>
             <div style={{ ...s.rowDot, background: r.color }} />
@@ -54,7 +54,7 @@ export default function SourceBias() {
 }
 
 const s = {
-  card: { background: "#fff", border: "1px solid #e8e4de", borderRadius: 14, padding: "13px 15px" },
+  card: { background: "#fff", border: "1px solid #e8e4de", borderRadius: 14, padding: "13px 15px", flex: 1 },
   header: { marginBottom: 8 },
   title: { fontSize: 13, fontWeight: 600, color: "#1a1a1a" },
   subtitle: { fontSize: 10.5, color: "#aaa", marginTop: 2 },

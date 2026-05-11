@@ -4,22 +4,24 @@ import { mapMarkers } from "../data";
 import { X, ExternalLink } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 
-function getPublisherStyle(publisher) {
-  const styles = {
-    "BBC News":            { background: "#f5a500", color: "#000", fontFamily: "Georgia, serif" },
-    "Time Out London":     { background: "#000", color: "#fff", fontFamily: "Arial, sans-serif" },
-    "City of London":      { background: "#003057", color: "#fff", fontFamily: "Arial, sans-serif" },
-    "House of Commons Library": { background: "#006e46", color: "#fff", fontFamily: "Arial, sans-serif" },
-    "Spectrum News NY1":   { background: "#003087", color: "#fff", fontFamily: "Arial, sans-serif" },
-    "NYC.gov":             { background: "#003087", color: "#fff", fontFamily: "Arial, sans-serif" },
-    "Staffing Industry":   { background: "#1a1a1a", color: "#fff", fontFamily: "Arial, sans-serif" },
-    "Travel and Tour World": { background: "#0077cc", color: "#fff", fontFamily: "Arial, sans-serif" },
-    "The Rio Times":       { background: "#006633", color: "#fff", fontFamily: "Georgia, serif" },
-    "Indian Defence News": { background: "#ff6600", color: "#fff", fontFamily: "Arial, sans-serif" },
-    "Wego Travel Blog":    { background: "#00b4d8", color: "#fff", fontFamily: "Arial, sans-serif" },
-    "MINDEF Singapore":    { background: "#cc0000", color: "#fff", fontFamily: "Arial, sans-serif" },
-  };
-  return styles[publisher] || { background: "#333", color: "#fff", fontFamily: "Arial, sans-serif" };
+const PUBLISHER_DOMAINS = {
+  "BBC News":                 "bbc.co.uk",
+  "Time Out London":          "timeout.com",
+  "City of London":           "cityoflondon.gov.uk",
+  "House of Commons Library": "parliament.uk",
+  "Spectrum News NY1":        "ny1.com",
+  "NYC.gov":                  "nyc.gov",
+  "Staffing Industry":        "staffingindustry.com",
+  "Travel and Tour World":    "travelandtourworld.com",
+  "The Rio Times":            "riotimesonline.com",
+  "Indian Defence News":      "indiandefencenews.in",
+  "Wego Travel Blog":         "wego.com",
+  "MINDEF Singapore":         "mindef.gov.sg",
+};
+
+function getFavicon(publisher) {
+  const domain = PUBLISHER_DOMAINS[publisher] || "";
+  return domain ? `https://www.google.com/s2/favicons?domain=${domain}&sz=16` : null;
 }
 
 export default function GlobalMap() {
@@ -79,7 +81,10 @@ export default function GlobalMap() {
                   <a key={i} href={a.url} target="_blank" rel="noreferrer" style={s.articleItem}>
                     <div style={s.articleTitle}>{a.title}</div>
                     <div style={s.articleBottom}>
-                      <span style={{ ...s.publisherBadge, ...getPublisherStyle(a.publisher) }}>
+                      <span style={s.publisherBadge}>
+                        {getFavicon(a.publisher) && (
+                          <img src={getFavicon(a.publisher)} alt="" style={s.favicon} />
+                        )}
                         {a.publisher}
                       </span>
                       <ExternalLink size={10} color="#0067b8" />
@@ -111,5 +116,6 @@ const s = {
   articleItem: { display: "flex", flexDirection: "column", gap: 5, padding: "9px 12px", borderBottom: "1px solid #f2ede8", textDecoration: "none", cursor: "pointer", background: "#fff" },
   articleTitle: { fontSize: 12, color: "#333", lineHeight: 1.4 },
   articleBottom: { display: "flex", alignItems: "center", justifyContent: "space-between" },
-  publisherBadge: { fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 3, letterSpacing: "0.02em" },
+  publisherBadge: { display: "flex", alignItems: "center", gap: 4, fontSize: 10, fontWeight: 600, color: "#1a1a1a", background: "#f0ece7", padding: "2px 7px", borderRadius: 3 },
+  favicon: { width: 12, height: 12, objectFit: "contain", flexShrink: 0 },
 };
