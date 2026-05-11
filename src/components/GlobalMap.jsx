@@ -40,7 +40,7 @@ export default function GlobalMap() {
           zoomControl={true}
           attributionControl={false}
         >
-          <TileLayer url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png" />
+          <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png" />
           {mapMarkers.map((m, i) => (
             <>
               <CircleMarker
