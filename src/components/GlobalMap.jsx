@@ -30,13 +30,13 @@ export default function GlobalMap() {
                 key={`outer-${i}`}
                 center={[m.lat, m.lng]}
                 radius={m.articles.length * 4 + 12}
-                pathOptions={{ color: "#58a6ff", fillColor: "#58a6ff", fillOpacity: 0.08, weight: 0.5 }}
+                pathOptions={{ color: "#cc2200", fillColor: "#cc2200", fillOpacity: 0.08, weight: 0.5 }}
               />
               <CircleMarker
                 key={`inner-${i}`}
                 center={[m.lat, m.lng]}
                 radius={m.articles.length * 4 + 5}
-                pathOptions={{ color: "#58a6ff", fillColor: "#58a6ff", fillOpacity: 0.5, weight: 1.5 }}
+                pathOptions={{ color: "#cc2200", fillColor: "#cc2200", fillOpacity: 0.35, weight: 1.5 }}
                 eventHandlers={{ click: () => setSelected(m) }}
               >
                 <Tooltip direction="top" offset={[0, -6]} opacity={0.95}>
