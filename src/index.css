@@ -4,3 +4,5 @@ body { font-family: 'Inter', system-ui, sans-serif; background: #f3f0eb; color: 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d8d3cc; border-radius: 4px; }
+
+.leaflet-control-zoom a { width: 22px !important; height: 22px !important; line-height: 22px !important; font-size: 14px !important; }

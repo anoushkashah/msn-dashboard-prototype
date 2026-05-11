@@ -20,6 +20,14 @@ function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+const ARTICLES = {
+  cheerMeUp: {
+    image: "https://images.unsplash.com/photo-1590698933947-a202b069a861?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  feelingLucky: {
+    image: "https://plus.unsplash.com/premium_photo-1664392434825-eb95db0931d4?q=80&w=1650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+};
 
 export default function MoodCards() {
   const [hovered, setHovered] = useState(null);
@@ -43,7 +51,14 @@ export default function MoodCards() {
           onMouseEnter={() => setHovered(key)}
           onMouseLeave={() => setHovered(null)}
         >
-          <div style={s.label}>{label}</div>
+          <div style={s.row}>
+            <div style={s.label}>{label}</div>
+            <img
+              src={ARTICLES[key].image}
+              alt={label}
+              style={s.photo}
+            />
+          </div>
         </div>
       ))}
     </div>
@@ -60,5 +75,13 @@ const s = {
     flex: 1,
     transition: "background 0.15s",
   },
-  label: { fontSize: 16, fontWeight: 600, color: "#1a1a1a", textAlign: "center", padding: "6px 0" },
+  row: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 },
+  label: { fontSize: 12, fontWeight: 500, color: "#1a1a1a", flex: 1 },
+  photo: {
+    width: 48,
+    height: 48,
+    borderRadius: 8,
+    objectFit: "cover",
+    flexShrink: 0,
+  },
 };

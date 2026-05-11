@@ -63,32 +63,34 @@ export default function GlobalMap() {
             </>
           ))}
         </MapContainer>
-      </div>
 
-      {selected && (
-        <div style={s.panel}>
-          <div style={s.panelHeader}>
-            <div style={s.panelTitle}>{selected.label}</div>
-            <div style={s.panelCount}>{selected.articles.length} articles</div>
-            <button style={s.closeBtn} onClick={() => setSelected(null)}>
-              <X size={13} />
-            </button>
+        {selected && (
+          <div style={s.backdrop} onClick={() => setSelected(null)}>
+            <div style={s.lightbox} onClick={e => e.stopPropagation()}>
+              <div style={s.panelHeader}>
+                <div style={s.panelTitle}>{selected.label}</div>
+                <div style={s.panelCount}>{selected.articles.length} articles</div>
+                <button style={s.closeBtn} onClick={() => setSelected(null)}>
+                  <X size={13} />
+                </button>
+              </div>
+              <div style={s.articleList}>
+                {selected.articles.map((a, i) => (
+                  <a key={i} href={a.url} target="_blank" rel="noreferrer" style={s.articleItem}>
+                    <div style={s.articleTitle}>{a.title}</div>
+                    <div style={s.articleBottom}>
+                      <span style={{ ...s.publisherBadge, ...getPublisherStyle(a.publisher) }}>
+                        {a.publisher}
+                      </span>
+                      <ExternalLink size={10} color="#0067b8" />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-          <div style={s.articleList}>
-            {selected.articles.map((a, i) => (
-              <a key={i} href={a.url} target="_blank" rel="noreferrer" style={s.articleItem}>
-                <div style={s.articleTitle}>{a.title}</div>
-                <div style={s.articleBottom}>
-                  <span style={{ ...s.publisherBadge, ...getPublisherStyle(a.publisher) }}>
-                    {a.publisher}
-                  </span>
-                  <ExternalLink size={10} color="#0067b8" />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
@@ -98,13 +100,14 @@ const s = {
   header: { display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 8 },
   title: { fontSize: 13, fontWeight: 600, color: "#1a1a1a" },
   meta: { fontSize: 11, color: "#27a157" },
-  mapWrap: { flex: 1, minHeight: 200, borderRadius: 10, overflow: "hidden" },
-  panel: { marginTop: 10, background: "#fff", borderRadius: 12, border: "1px solid #e8e4de", overflow: "hidden" },
-  panelHeader: { display: "flex", alignItems: "center", gap: 6, padding: "10px 12px", borderBottom: "1px solid #f2ede8" },
+  mapWrap: { flex: 1, minHeight: 200, borderRadius: 10, overflow: "hidden", position: "relative" },
+  backdrop: { position: "absolute", inset: 0, background: "rgba(0,0,0,0.35)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", borderRadius: 10 },
+  lightbox: { background: "#fff", borderRadius: 12, border: "1px solid #e8e4de", overflow: "hidden", width: "80%", maxWidth: 340, maxHeight: "75%", display: "flex", flexDirection: "column", boxShadow: "0 8px 32px rgba(0,0,0,0.18)" },
+  panelHeader: { display: "flex", alignItems: "center", gap: 6, padding: "10px 12px", borderBottom: "1px solid #f2ede8", flexShrink: 0 },
   panelTitle: { fontSize: 13, fontWeight: 600, color: "#1a1a1a", flex: 1 },
   panelCount: { fontSize: 11, color: "#0067b8" },
   closeBtn: { background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", color: "#aaa", padding: 0 },
-  articleList: { display: "flex", flexDirection: "column" },
+  articleList: { display: "flex", flexDirection: "column", overflowY: "auto" },
   articleItem: { display: "flex", flexDirection: "column", gap: 5, padding: "9px 12px", borderBottom: "1px solid #f2ede8", textDecoration: "none", cursor: "pointer", background: "#fff" },
   articleTitle: { fontSize: 12, color: "#333", lineHeight: 1.4 },
   articleBottom: { display: "flex", alignItems: "center", justifyContent: "space-between" },
