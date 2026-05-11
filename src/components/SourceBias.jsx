@@ -56,14 +56,14 @@ export default function SourceBias() {
 const s = {
   card: { background: "#fff", border: "1px solid #e8e4de", borderRadius: 14, padding: "13px 15px", flex: 1 },
   header: { marginBottom: 8 },
-  title: { fontSize: 13, fontWeight: 600, color: "#1a1a1a" },
-  subtitle: { fontSize: 10.5, color: "#aaa", marginTop: 2 },
+  title: { fontSize: 14, fontWeight: 600, color: "#1a1a1a" },
+  subtitle: { fontSize: 11.5, color: "#aaa", marginTop: 2 },
   gaugeWrap: { display: "flex", justifyContent: "center", margin: "4px 0 8px" },
   rows: { display: "flex", flexDirection: "column", gap: 6 },
   row: { display: "flex", alignItems: "center", gap: 7 },
   rowDot: { width: 8, height: 8, borderRadius: "50%", flexShrink: 0 },
-  rowLabel: { fontSize: 11, color: "#555", width: 36 },
+  rowLabel: { fontSize: 12, color: "#555", width: 36 },
   rowBar: { flex: 1, height: 4, background: "#f0ece7", borderRadius: 2, overflow: "hidden" },
   rowFill: { height: "100%", borderRadius: 2 },
-  rowVal: { fontSize: 11, color: "#888", width: 28, textAlign: "right" },
+  rowVal: { fontSize: 12, color: "#888", width: 28, textAlign: "right" },
 };

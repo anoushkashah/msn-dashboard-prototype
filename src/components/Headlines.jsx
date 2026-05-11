@@ -62,9 +62,9 @@ export default function Headlines() {
 
 const s = {
   card: { background: "#fff", border: "1px solid #e8e4de", borderRadius: 16, padding: 16, display: "flex", flexDirection: "column", gap: 2 },
-  title: { fontSize: 13.5, fontWeight: 600, color: "#1a1a1a", marginBottom: 8 },
+  title: { fontSize: 14.5, fontWeight: 600, color: "#1a1a1a", marginBottom: 8 },
   item: { display: "flex", flexDirection: "column", padding: "8px 0", borderBottom: "1px solid #f2ede8", textDecoration: "none", cursor: "pointer" },
-  text: { fontSize: 12.5, color: "#333", lineHeight: 1.4, marginBottom: 5 },
+  text: { fontSize: 13.5, color: "#333", lineHeight: 1.4, marginBottom: 5 },
   bottom: { display: "flex", alignItems: "center", gap: 8 },
-  time: { fontSize: 10, color: "#bbb" },
+  time: { fontSize: 11, color: "#bbb" },
 };

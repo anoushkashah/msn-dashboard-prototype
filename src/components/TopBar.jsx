@@ -20,8 +20,8 @@ export default function TopBar() {
 
 const s = {
   bar: { display: "flex", alignItems: "center", gap: 12, padding: "10px 22px", borderBottom: "1px solid #e0dbd3", background: "#f3f0eb", flexShrink: 0 },
-  breadcrumb: { fontSize: 12, color: "#999" },
+  breadcrumb: { fontSize: 13, color: "#999" },
   searchWrap: { marginLeft: "auto", display: "flex", alignItems: "center", gap: 7, background: "#fff", border: "1px solid #e0dbd3", borderRadius: 24, padding: "6px 13px", width: 220 },
-  input: { background: "none", border: "none", outline: "none", color: "#333", fontSize: 13, fontFamily: "inherit", flex: 1, width: "100%" },
+  input: { background: "none", border: "none", outline: "none", color: "#333", fontSize: 14, fontFamily: "inherit", flex: 1, width: "100%" },
   iconBtn: { width: 30, height: 30, borderRadius: "50%", background: "transparent", border: "1px solid #ddd", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" },
 };

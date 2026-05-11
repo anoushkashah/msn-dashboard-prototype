@@ -34,6 +34,6 @@ export default function PublisherBadge({ publisher }) {
 }
 
 const s = {
-  badge: { display: "inline-flex", alignItems: "center", gap: 4, fontSize: 10, fontWeight: 600, color: "#1a1a1a", background: "#f0ece7", padding: "2px 7px", borderRadius: 3 },
+  badge: { display: "inline-flex", alignItems: "center", gap: 4, fontSize: 11, fontWeight: 600, color: "#1a1a1a", background: "#f0ece7", padding: "2px 7px", borderRadius: 3 },
   favicon: { width: 12, height: 12, objectFit: "contain", flexShrink: 0 },
 };

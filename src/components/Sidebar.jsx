@@ -60,13 +60,13 @@ export default function Sidebar({ active, setActive }) {
 
 const s = {
   sidebar: { width: 210, minWidth: 210, background: "#ede9e3", borderRight: "1px solid #e0dbd3", display: "flex", flexDirection: "column", padding: "16px 0", height: "100vh", overflow: "hidden" },
-  logo: { fontSize: 16, fontWeight: 600, color: "#1a1a1a", padding: "4px 20px 18px", letterSpacing: "-0.3px" },
-  navItem: { display: "flex", alignItems: "center", gap: 10, padding: "8px 20px", cursor: "pointer", color: "#555", fontSize: 13, transition: "background .12s" },
+  logo: { fontSize: 17, fontWeight: 600, color: "#1a1a1a", padding: "4px 20px 18px", letterSpacing: "-0.3px" },
+  navItem: { display: "flex", alignItems: "center", gap: 10, padding: "8px 20px", cursor: "pointer", color: "#555", fontSize: 14, transition: "background .12s" },
   activeItem: { background: "#ddd8d0", color: "#000", fontWeight: 500 },
   divider: { border: "none", borderTop: "1px solid #d8d3cc", margin: "8px 0" },
-  section: { fontSize: 10, color: "#999", textTransform: "uppercase", letterSpacing: ".07em", padding: "5px 20px 2px" },
-  recentItem: { padding: "6px 20px", fontSize: 12, color: "#777", cursor: "pointer", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" },
+  section: { fontSize: 11, color: "#999", textTransform: "uppercase", letterSpacing: ".07em", padding: "5px 20px 2px" },
+  recentItem: { padding: "6px 20px", fontSize: 13, color: "#777", cursor: "pointer", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" },
   footer: { marginTop: "auto", padding: "12px 20px", borderTop: "1px solid #d8d3cc" },
-  signInNote: { fontSize: 11, color: "#999", textAlign: "center", marginBottom: 8, lineHeight: 1.45 },
-  signInBtn: { width: "100%", background: "#1a1a1a", color: "#fff", border: "none", borderRadius: 24, padding: 9, fontSize: 13, fontFamily: "inherit", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 7 },
+  signInNote: { fontSize: 12, color: "#999", textAlign: "center", marginBottom: 8, lineHeight: 1.45 },
+  signInBtn: { width: "100%", background: "#1a1a1a", color: "#fff", border: "none", borderRadius: 24, padding: 9, fontSize: 14, fontFamily: "inherit", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 7 },
 };
