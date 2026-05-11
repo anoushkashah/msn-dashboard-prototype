@@ -22,28 +22,34 @@ MSN News reaches millions of users through Microsoft Copilot, but the existing i
 ## Features
 
 ### Personalized Top Topics
-Three topic cards tailored to the user's reading history. Each card surfaces a live article preview with image, publisher, headline, and a direct link — replacing static metrics with content that invites action.
+Three topic cards tailored to the user's reading history. Each card surfaces a live article preview with image, publisher badge, and headline — replacing static metrics with content that invites action.
 
 ### Top Headlines Today
-Real, timestamped articles from today's news cycle. Each headline links directly to the source article and displays the publisher name styled in its brand font and color for instant recognition.
+Real, timestamped articles from today's news cycle. Each headline links directly to the source article and displays the publisher name alongside a favicon via the shared `PublisherBadge` component for instant recognition.
+
+### Welcome Card
+A hero card that greets the user by name and links to the article they left off reading, overlaid on a contextual background image. Acts as a personalized entry point back into the news feed.
 
 ### Global News Map
-An interactive Leaflet world map with story bubbles sized by article count per region. Clicking a bubble opens a panel of real articles from that location, each linking to the original source — turning geography into a navigation tool.
+An interactive Leaflet world map with dual-ring story bubbles sized by article count per region. Clicking a bubble opens a modal panel listing real articles from that location — each with a publisher badge and external link — turning geography into a navigation tool.
 
-### Source Political Bias Arc
-A left-to-right gradient arc visualizing the political lean of the user's sources, with a needle indicating current skew and a breakdown of left, center, and right source counts. Designed to give readers transparency rather than leaving algorithmic bias invisible.
+### Source Political Diversity
+A left-to-right gradient arc visualizing the political lean of the user's sources, with a glowing dot indicating current skew and a bar breakdown of left, center, and right source counts. Designed to give readers transparency rather than leaving algorithmic bias invisible.
 
 ### Collections
-A saved articles system with folders organized by topic (Finance, Technology, Science, Politics). Users can filter collections by topic, see article counts, and view creation dates. A "+5 more collections" footer suggests depth without overwhelming the interface.
+A saved articles system with folders organized by topic. Users can see article counts and creation dates, browse deeper via a "+ 5 more collections" link, or start a new folder with "+ Add new collection". A tab switch reveals the Your Stats view.
 
 ### Your Stats
 A reading metrics panel showing articles read this week, articles shared this week, all-time totals, and a bar chart tracking weekly reading volume across the past month — designed to reward habitual engagement.
 
 ### Mood-Based Discovery
-Two compact cards — Cheer Me Up and Feeling Lucky — for serendipitous, non-algorithmic news discovery based on user likes.
+Two compact cards — Cheer Me Up and Feeling Lucky — for serendipitous, non-algorithmic news discovery. Each click opens a randomly selected article from a curated pool.
 
-### Copilot Chat Bar
-A full-width chat interface spanning the footer, allowing users to query the news naturally using Copilot — bridging passive reading with active AI-assisted exploration.
+### MSN News Chat Bar
+A full-width chat interface in the footer, allowing users to query the news naturally. Includes attachment, voice input, and a model selector ("Smart") — bridging passive reading with active AI-assisted exploration.
+
+### Sidebar Navigation
+A persistent left sidebar with primary nav (Dashboard, My Feed, Discover, Saved, Alerts), topic shortcuts (Finance, Sports, Politics, Collections), a recent searches list, and a sign-in prompt in the footer.
 
 ---
 
@@ -57,7 +63,7 @@ The visual language mirrors Microsoft Copilot's warm off-white palette, rounded 
 
 | Layer | Technology |
 |---|---|
-| Framework | React + Vite |
+| Framework | React 19 + Vite 8 |
 | Mapping | Leaflet / React-Leaflet |
 | Icons | Lucide React |
 | Styling | Inline React styles |
@@ -94,19 +100,21 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 - `src/`
   - `main.jsx` — Entry point
   - `App.jsx` — Root layout and grid
-  - `data.js` — Mock data (articles, collections, map markers)
+  - `data.js` — Mock data (articles, collections, map markers, bias data)
   - `index.css` — Global reset
   - `components/`
-    - `Sidebar.jsx` — Navigation sidebar
-    - `TopBar.jsx` — Search and breadcrumb bar
+    - `Sidebar.jsx` — Navigation sidebar with primary nav, topics, recents, and sign-in footer
+    - `TopBar.jsx` — Search bar, settings, and notifications
     - `TopTopics.jsx` — Personalized topic cards with article previews
-    - `WelcomeCard.jsx` — User welcome hero card
-    - `Headlines.jsx` — Top headlines with publisher branding
-    - `MoodCards.jsx` — Cheer me up / Feeling lucky
-    - `Collections.jsx` — Saved collections with stats tab
-    - `SourceBias.jsx` — Political bias arc visualization
-    - `GlobalMap.jsx` — Interactive world news map
-    - `ChatBar.jsx` — Copilot chat footer
+    - `WelcomeCard.jsx` — User welcome hero card linking to last-read article
+    - `Headlines.jsx` — Top headlines with publisher badges and timestamps
+    - `MoodCards.jsx` — Cheer Me Up / Feeling Lucky discovery cards
+    - `Collections.jsx` — Saved collections and Your Stats tab
+    - `SourceBias.jsx` — Source political diversity arc visualization
+    - `GlobalMap.jsx` — Interactive world news map with article panel
+    - `ChatBar.jsx` — MSN News chat footer
+    - `PublisherBadge.jsx` — Shared favicon + publisher name badge used across cards
+
 ---
 
 ## Deployment
