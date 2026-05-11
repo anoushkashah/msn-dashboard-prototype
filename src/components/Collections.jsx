@@ -10,15 +10,8 @@ const weeklyData = [
 ];
 
 const maxRead = Math.max(...weeklyData.map(d => d.read));
-const allTopics = ["All", ...new Set(collections.map(c => c.topic))];
-
 export default function Collections() {
   const [tab, setTab] = useState("collections");
-  const [activeFilter, setActiveFilter] = useState("All");
-
-  const filtered = activeFilter === "All"
-    ? collections
-    : collections.filter(c => c.topic === activeFilter);
 
   return (
     <div style={s.card}>
@@ -33,19 +26,8 @@ export default function Collections() {
 
       {tab === "collections" && (
         <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
-          <div style={s.filters}>
-            {allTopics.map(t => (
-              <button
-                key={t}
-                style={{ ...s.filterBtn, ...(activeFilter === t ? s.filterActive : {}) }}
-                onClick={() => setActiveFilter(t)}
-              >
-                {t}
-              </button>
-            ))}
-          </div>
           <div style={s.collList}>
-            {filtered.map(c => (
+            {collections.map(c => (
               <div key={c.id} style={s.collItem}>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={s.collName}>{c.name}</div>
@@ -107,9 +89,6 @@ const s = {
   tabs: { display: "flex", gap: 6, marginBottom: 2 },
   tab: { display: "flex", alignItems: "center", gap: 4, background: "#f3f0eb", border: "1px solid #e0dbd3", borderRadius: 20, padding: "4px 10px", fontSize: 12.5, color: "#666", cursor: "pointer", fontFamily: "inherit" },
   activeTab: { background: "#1a1a1a", color: "#fff", border: "1px solid #1a1a1a" },
-  filters: { display: "flex", gap: 5, flexWrap: "wrap", marginBottom: 8 },
-  filterBtn: { background: "#f3f0eb", border: "1px solid #e0dbd3", borderRadius: 20, padding: "3px 9px", fontSize: 12, color: "#666", cursor: "pointer", fontFamily: "inherit" },
-  filterActive: { background: "#1a1a1a", color: "#fff", border: "1px solid #1a1a1a" },
   collList: { display: "flex", flexDirection: "column", flex: 1 },
   collItem: { display: "flex", alignItems: "center", gap: 8, padding: "7px 0", borderBottom: "1px solid #f2ede8", cursor: "pointer" },
   collName: { fontSize: 13, fontWeight: 500, color: "#1a1a1a", marginBottom: 2 },
