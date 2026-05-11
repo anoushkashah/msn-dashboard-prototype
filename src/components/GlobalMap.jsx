@@ -23,7 +23,7 @@ export default function GlobalMap() {
           zoomControl={true}
           attributionControl={false}
         >
-          <TileLayer url="https://stamen-tiles.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png" />
+          <TileLayer url="https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg" />
           {mapMarkers.map((m, i) => (
             <>
               <CircleMarker
