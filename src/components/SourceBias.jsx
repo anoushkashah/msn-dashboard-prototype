@@ -18,7 +18,7 @@ export default function SourceBias() {
         <svg width="160" height="90" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="biasGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#1550a8" />
+              <stop offset="0%" stopColor="#0a4a8a" />
               <stop offset="50%" stopColor="#888888" />
               <stop offset="100%" stopColor="#9e2218" />
             </linearGradient>
@@ -41,7 +41,7 @@ export default function SourceBias() {
 
       <div style={s.rows}>
         {[
-          { label: "Left", value: biasData.left.sources, color: "#1550a8" },
+          { label: "Left", value: biasData.left.sources, color: "#0a4a8a" },
           { label: "Center", value: biasData.center.sources, color: "#888888" },
           { label: "Right", value: biasData.right.sources, color: "#9e2218" },
         ].map(r => (
