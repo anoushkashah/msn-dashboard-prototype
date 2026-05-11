@@ -38,6 +38,7 @@ export default function Collections() {
             ))}
           </div>
           <div style={s.moreBtn}>+ 5 more collections</div>
+          <div style={s.addBtn}>+ Add new collection</div>
         </div>
       )}
 
@@ -95,6 +96,7 @@ const s = {
   collCount: { fontSize: 11.5, color: "#aaa" },
   collDate: { fontSize: 11.5, color: "#bbb", flexShrink: 0, marginLeft: 8 },
   moreBtn: { fontSize: 12.5, color: "#0067b8", textAlign: "center", padding: "10px 0 2px", cursor: "pointer", borderTop: "1px solid #f2ede8", marginTop: 4 },
+  addBtn: { fontSize: 12.5, color: "#888", textAlign: "center", padding: "8px 0 2px", cursor: "pointer", borderTop: "1px solid #f2ede8", marginTop: 2 },
   stats: { display: "flex", flexDirection: "column", gap: 10 },
   delta: { fontSize: 13, color: "#1a7a40", fontWeight: 500 },
   statsGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 },
