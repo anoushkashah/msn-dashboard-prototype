@@ -15,9 +15,9 @@ export default function SourceBias() {
         <svg width="160" height="90" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="biasGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#0067b8" />
-              <stop offset="50%" stopColor="#9b59b6" />
-              <stop offset="100%" stopColor="#c0392b" />
+              <stop offset="0%" stopColor="#2a5a8c" />
+              <stop offset="50%" stopColor="#6e4a8a" />
+              <stop offset="100%" stopColor="#8e2e22" />
             </linearGradient>
           </defs>
           <path d="M16 82 A64 64 0 0 1 144 82" fill="none" stroke="#eee" strokeWidth="10" strokeLinecap="round" />
@@ -35,9 +35,9 @@ export default function SourceBias() {
 
       <div style={s.rows}>
         {[
-          { label: "Left", value: biasData.left.sources, color: "#0067b8", bg: "#e8f0fe" },
-          { label: "Center", value: biasData.center.sources, color: "#9b59b6", bg: "#f5effe" },
-          { label: "Right", value: biasData.right.sources, color: "#c0392b", bg: "#fdeeed" },
+          { label: "Left", value: biasData.left.sources, color: "#2a5a8c", bg: "#e8f0fe" },
+          { label: "Center", value: biasData.center.sources, color: "#6e4a8a", bg: "#f5effe" },
+          { label: "Right", value: biasData.right.sources, color: "#8e2e22", bg: "#fdeeed" },
         ].map(r => (
           <div key={r.label} style={s.row}>
             <div style={{ ...s.rowDot, background: r.color }} />

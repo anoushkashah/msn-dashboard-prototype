@@ -1,5 +1,4 @@
 import { topTopics } from "../data";
-import { ExternalLink } from "lucide-react";
 
 export default function TopTopics() {
   return (
@@ -16,7 +15,6 @@ export default function TopTopics() {
               <div style={s.articleBody}>
                 <div style={s.articlePublisher}>{t.article.publisher}</div>
                 <div style={s.articleTitle}>{t.article.title}</div>
-                <div style={s.articleLink}><ExternalLink size={10} /> Read article</div>
               </div>
             </a>
           </div>
