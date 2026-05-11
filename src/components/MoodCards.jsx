@@ -16,44 +16,35 @@ const LUCKY_ARTICLES = [
   { url: "https://www.npr.org/2025/05/19/nx-s1-5395983/baby-monkey-kidnappings-capuchin-howler-culture" },
 ];
 
-const IMAGES = {
-  cheerMeUp: "https://images.unsplash.com/photo-1590698933947-a202b069a861?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  feelingLucky: "https://plus.unsplash.com/premium_photo-1664392434825-eb95db0931d4?q=80&w=1650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-};
-
 function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
+
+const CARDS = [
+  { key: "cheerMeUp", label: "Cheer Me Up", desc: "Positive news to brighten your day" },
+  { key: "feelingLucky", label: "Feeling Lucky", desc: "Daily randomized article based on your likes" },
+];
 
 export default function MoodCards() {
   const [hovered, setHovered] = useState(null);
 
   const handleClick = (key) => {
     const pool = key === "cheerMeUp" ? CHEER_ARTICLES : LUCKY_ARTICLES;
-    const article = getRandom(pool);
-    window.open(article.url, "_blank");
+    window.open(getRandom(pool).url, "_blank");
   };
 
   return (
-    <div style={s.col}>
-      {[
-        { key: "cheerMeUp", label: "Cheer Me Up", desc: "Positive news to brighten your day" },
-        { key: "feelingLucky", label: "Feeling Lucky", desc: "Daily randomized article based on your likes" },
-      ].map(({ key, label, desc }) => (
+    <div style={s.outer}>
+      {CARDS.map(({ key, label, desc }) => (
         <div
           key={key}
-          style={{ ...s.card, background: hovered === key ? "#f5f2ee" : "#fff" }}
+          style={{ ...s.inner, background: hovered === key ? "#ede8e1" : "#f0ece7" }}
           onClick={() => handleClick(key)}
           onMouseEnter={() => setHovered(key)}
           onMouseLeave={() => setHovered(null)}
         >
-          <div style={s.row}>
-            <div>
-              <div style={s.label}>{label}</div>
-              <div style={s.desc}>{desc}</div>
-            </div>
-            <img src={IMAGES[key]} alt={label} style={s.photo} />
-          </div>
+          <div style={s.label}>{label}</div>
+          <div style={s.desc}>{desc}</div>
         </div>
       ))}
     </div>
@@ -61,17 +52,23 @@ export default function MoodCards() {
 }
 
 const s = {
-  col: { display: "flex", flexDirection: "column", gap: 8 },
-  card: {
+  outer: {
+    background: "#fff",
     border: "1px solid #e8e4de",
-    borderRadius: 12,
-    padding: "9px 12px",
-    cursor: "pointer",
+    borderRadius: 14,
+    padding: "12px",
+    display: "flex",
+    flexDirection: "column",
+    gap: 8,
     flex: 1,
-    transition: "background 0.15s",
   },
-  row: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 },
+  inner: {
+    borderRadius: 10,
+    padding: "11px 13px",
+    cursor: "pointer",
+    transition: "background 0.15s",
+    flex: 1,
+  },
   label: { fontSize: 14.5, fontWeight: 700, color: "#1a1a1a" },
-  desc: { fontSize: 12, color: "#888", marginTop: 2 },
-  photo: { width: 48, height: 48, borderRadius: 8, objectFit: "cover", flexShrink: 0 },
+  desc: { fontSize: 12, color: "#888", marginTop: 3 },
 };
